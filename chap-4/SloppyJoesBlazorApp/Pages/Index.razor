@@ -1,0 +1,51 @@
+﻿@page "/"
+
+<PageTitle>Sloppy Joe’s Budget House o’ Discount Sandwiches!</PageTitle>
+
+<h1>Sloppy Joe’s Budget House o’ Discount Sandwiches!</h1>
+
+<div class="container">
+    @foreach (MenuItem menuItem in MenuItems)
+    {
+        <div class="row">
+            <div class="col-9">
+                <p>@menuItem.Description</p>
+            </div>
+            <div class="col-3">
+                <p>@menuItem.Price</p>
+
+            </div>
+        </div>
+    }
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <strong>Add guacamole for @guacamolePrice</strong>
+        </div>
+    </div>
+    @code {
+        MenuItem[] MenuItems = new MenuItem[5];
+        string guacamolePrice = string.Empty;
+
+        protected override void OnInitialized()
+        {
+            for (int i = 0; i < MenuItems.Length; i++)
+            {
+                MenuItems[i] = new MenuItem();
+                if (i >= 3)
+                {
+                    MenuItems[i].Breads = new string[] {
+                        "plain bagel",
+                        "onion bagel",
+                        "pumpernickel bagel",
+                        "everything bagel",
+                    };
+                }
+                
+                MenuItems[i].Generate();
+            }
+            MenuItem guacamoleItem = new MenuItem();
+            guacamoleItem.Generate();
+            guacamolePrice = guacamoleItem.Price;
+        }
+}
+</div>

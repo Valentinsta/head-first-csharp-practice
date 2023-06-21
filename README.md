@@ -1,13 +1,13 @@
 # head-first-csharp-practice
-Head First C# 4th Edition (Andrew Stellman) - practice problems and labs
+_[Head First C# 4th Edition (Andrew Stellman)](<https://www.oreilly.com/library/view/head-first-c/9781491976692/>)_ - practice problems and labs
 
 ## Progress
 
 - [x] Chapter 1: Start Building with c#
 - [x] Chapter 2: Dive into C#: Statements, Classes, and Code
 - [x] Chapter 3: Objects…get oriented!: Making code make sense
-- **Chapter 4: Types and References: Getting the Reference** 👈
-  - [ ] Unity Lab #2: Write C# Code for Unity
+- [x] Chapter 4: Types and References: Getting the Reference
+  - [ ] **Unity Lab #2: Write C# Code for Unity** 👈
 - [ ] Chapter 5: Encapsulation: Keep your Privates… Private
 - [ ] Chapter 6: Inheritance: Your Object’s Family Tree
 - [ ] Chapter 7: Interfaces, Casting, and “is”: Making Classes keep their Promises
