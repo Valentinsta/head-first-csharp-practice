@@ -10,8 +10,8 @@ _[Head First C# 4th Edition (Andrew Stellman)](<https://www.oreilly.com/library/
 - [x] Chapter 4: Types and References: Getting the Reference
 - [x] Unity Lab #2: Write C# Code for Unity
 - [x] Chapter 5: Encapsulation: Keep your Privates… Private
-- [ ] **Chapter 6: Inheritance: Your Object’s Family Tree** 👈
-- [ ] Unity Lab #3: GameObject Instances
+- [x] Chapter 6: Inheritance: Your Object’s Family Tree
+- [ ] **Unity Lab #3: GameObject Instances** 👈
 - [ ] Chapter 7: Interfaces, Casting, and “is”: Making Classes keep their Promises
 - [ ] Chapter 8: Enums and Collections: Organizing your Data
 - [ ] Unity Lab #4: User Interfaces
