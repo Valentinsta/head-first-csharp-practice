@@ -28,7 +28,7 @@
         </StackPanel>
         <Button Grid.Row="2" Content="Work the selected job" FontSize="18" Click="WorkShift_Click" Margin="20"/>
 
-        <Label Content="Queen's Report" Grid.Column="1" FontSize="18" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <Label Content="Queen's Report" Grid.Column="1" FontSize="18" Margin="20,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <TextBox x:Name="StatusReport"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" 
                  Margin="20" VerticalScrollBarVisibility="Auto" 
                  IsReadOnly="True"/>

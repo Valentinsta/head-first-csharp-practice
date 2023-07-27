@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace BeehiveManagementSystem
 {
-    internal class Bee
+    abstract class Bee
     {
-        public string Job { get; set; } = string.Empty;
-        public virtual float CostPershift { get; }
+        public string Job { get; private set; }
+        public abstract float CostPershift { get; }
+
+        public Bee(string typeName)
+        {
+            Job = typeName;
+        }
 
         public void WorkTheNextShift()
         {
@@ -22,6 +27,6 @@ namespace BeehiveManagementSystem
             throw new InvalidOperationException("The bee cannot work");
         }
 
-        protected virtual void DoJob() { }
+        protected abstract void DoJob();
     }
 }

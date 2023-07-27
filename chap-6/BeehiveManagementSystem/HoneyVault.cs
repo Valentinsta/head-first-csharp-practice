@@ -8,29 +8,55 @@ namespace BeehiveManagementSystem
 {
     internal static class HoneyVault
     {
-        public static string StatusReport { get; } = string.Empty;
+        const float NECTAR_CONVERSION_RATIO = .19f;
+        const float LOW_LEVEL_WARNING = 10f;
         private static float honey = 25f;
         private static float nectar = 100f;
 
-        public static void CollectNectar()
+        public static string StatusReport
         {
-            nectar += 5f;
+            get
+            {
+                StringBuilder reportBuilder = new();
+                reportBuilder.Append($"Vault report:\nHoney: {honey:0.0} units\nNectar: {nectar:0.0} units");
+
+                if (honey < LOW_LEVEL_WARNING)
+                {
+                    reportBuilder.Append("\nLOW HONEY - ADD A HONEY MANUFACTURER");
+                }
+                if (nectar < LOW_LEVEL_WARNING)
+                {
+                    reportBuilder.Append("\nLOW NECTAR - ADD A NECTAR COLLECTOR");
+                }
+
+                return reportBuilder.ToString();
+            }
+        }
+
+        public static void CollectNectar(float amount)
+        {
+            if (amount > 0f)
+            {
+                nectar += amount;
+            }
         }
 
         public static void ConvertNectarToHoney(float nectarQuantity)
         {
-            float honeydew = nectarQuantity * .25f;
+            nectarQuantity = (nectarQuantity > nectar) ? nectar : nectarQuantity;
+
+            float honeydew = nectarQuantity * NECTAR_CONVERSION_RATIO;
             nectar -= nectarQuantity;
             honey += honeydew;
         }
 
-        public static bool ConsumeHoney(float HoneyQuantity)
+        public static bool ConsumeHoney(float amount)
         {
-            if (honey < HoneyQuantity)
+            if (honey < amount)
             {
                 return false;
             }
-            honey -= HoneyQuantity;
+            honey -= amount;
             return true;
         }
     }
